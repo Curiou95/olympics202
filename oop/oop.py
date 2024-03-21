@@ -4,6 +4,8 @@ tr = turtle.Turtle()
 tr.pensize(5)
 
 
+
+# defined functions for all the five colors
 def blue():
     list1 = [
         tr.color("blue"),
@@ -14,62 +16,61 @@ def blue():
     ]
     return list1
 
-blue2 = blue()
-
-
-
 def black():
-    list1 = [
+    list2 = [
         tr.color("black"),
         tr.penup(),
         tr.goto(0,-25),
         tr.pendown(),
         tr.circle(45)
     ]
-    return list1
-
-black2 = black()
+    return list2
 
 def red():
-    list1 = [
+    list3 = [
         tr.color("red"),
         tr.penup(),
         tr.goto(110,-25),
         tr.pendown(),
         tr.circle(45)
     ]
-    return list1
-red2 = red()
+    return list3
 
 def yellow():
-    list1 = [
+    list4 = [
         tr.color("yellow"),
         tr.penup(),
         tr.goto(-55,-75),
         tr.pendown(),
         tr.circle(45)
     ]
-    return list1
-yellow2 = yellow()
+    return list4
 
 def green():
-    list1 = [
+    list5 = [
         tr.color("green"),
         tr.penup(),
         tr.goto(55,-75),
         tr.pendown(),
         tr.circle(45)
     ]
-    return list1
+    return list5
+
+# assigned all the functions to new variables and created a list of colors 
+blue2 = blue()
+black2 = black()
+red2 = red()
+yellow2 = yellow()
 green2 =green()
 
 
 # final function
+colors = [blue2, black2, red2, yellow2,green2]
 
+# here I iterated over the list of colors and returned the logo
 def olympic_logo(colors):
-    colors = [blue2, black2, red2, yellow2,green2]
     for i in colors:
         return i
     
 
-print(olympic_logo())
+print(olympic_logo(colors))
