@@ -1,76 +1,46 @@
+# Olympic logo
 import turtle
 
 tr = turtle.Turtle()
 tr.pensize(5)
 
 
-
-# defined functions for all the five colors
-def blue():
-    list1 = [
-        tr.color("blue"),
-        tr.penup(),
-        tr.goto(-110,-25),
-        tr.pendown(),
-        tr.circle(45)
-    ]
-    return list1
-
-def black():
-    list2 = [
-        tr.color("black"),
-        tr.penup(),
-        tr.goto(0,-25),
-        tr.pendown(),
-        tr.circle(45)
-    ]
-    return list2
-
-def red():
-    list3 = [
-        tr.color("red"),
-        tr.penup(),
-        tr.goto(110,-25),
-        tr.pendown(),
-        tr.circle(45)
-    ]
-    return list3
-
-def yellow():
-    list4 = [
-        tr.color("yellow"),
-        tr.penup(),
-        tr.goto(-55,-75),
-        tr.pendown(),
-        tr.circle(45)
-    ]
-    return list4
-
-def green():
-    list5 = [
-        tr.color("green"),
-        tr.penup(),
-        tr.goto(55,-75),
-        tr.pendown(),
-        tr.circle(45)
-    ]
-    return list5
-
-# assigned all the functions to new variables and created a list of colors 
-blue2 = blue()
-black2 = black()
-red2 = red()
-yellow2 = yellow()
-green2 =green()
+def draw(kolor, width, height):
+    tr.color(kolor)
+    tr.penup()
+    tr.goto(width, height)
+    tr.pendown()
+    tr.circle(45)
 
 
-# final function
-colors = [blue2, black2, red2, yellow2,green2]
+draw("blue", -110, -25)
+draw("black", 0, -25)
+draw("red", 110, -25)
+draw("yellow", -75, -55)
+draw("green", 55, -75)
 
-# here I iterated over the list of colors and returned the logo
-def olympic_logo(colors):
-    for i in colors:
-        return i
-    
 
-print(olympic_logo(colors))
+# input biodata
+def Bio_data2(name,age,email,gender):
+    name = input("Write your name: ")
+    age = int(input("Write your age: "))
+    email = input("Write your email: ")
+    gender = input("Write your gender: ")
+    return [name,age,email,gender]
+
+Bio_data2('name','age','email','gender')
+
+
+
+# calculate netpay
+def netpay(paye,nssf,total_pay):
+    paye = int(input("Paye: "))
+    nssf = int(input("NSSF: "))
+    total_pay = int(input("Total pay: "))
+    paye1 = (paye/100)*total_pay
+    nssf1 = ((nssf/100)*total_pay)
+    total_taxes = paye1 + nssf1
+    net = total_pay - total_taxes
+    return(net)
+
+print(netpay('paye','nssf','totalpay'))
